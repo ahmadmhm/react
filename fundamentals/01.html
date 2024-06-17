@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <meta>
+    </head>
+    <body>
+    </body>
+    <script type="module">
+        const rootElement = document.createElement('div');
+        rootElement.setAttribute('id', 'root');
+        document.body.append(rootElement)
+        const element = document.createElement('div');
+        element.textContent =  'Hello Ahmad ' + new Date();
+        element.className = 'container';
+        rootElement.append(element);
+    </script>
+</html>
