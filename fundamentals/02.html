@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+    <script type="module">
+        const rootElement = document.getElementById('root');
+        const firstElement = React.createElement('span', {},'Hi');
+        const secondElement = React.createElement('span', {},'Ahmad');
+        const thirdElement = React.createElement('span', {},'This is awesome');
+        const element = React.createElement('div', {
+            className: 'container',
+            childrenn: [firstElement, secondElement, thirdElement]
+        }, firstElement, ' ',secondElement, ' ', thirdElement);
+        ReactDOM.createRoot(rootElement).render(element)
+    </script>
+</html>
