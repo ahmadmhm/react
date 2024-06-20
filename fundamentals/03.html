@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+    <script type="text/babel">
+
+        const id = 'first'
+        const children = 'Hello Ahmad'
+        const className = 'container'
+        const element = <div className={className}>{children}</div>
+        const props = {id, children, className};
+        const scondElement = <div {...props} />;
+
+        const thirdElement = (
+            <div className="container">
+                <div className="message">Hello Ahmad</div>
+                <div className="message">Goodbye for now</div>
+            </div>
+        )
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+        root.render(element)
+        root.render(scondElement)
+        root.render(thirdElement)
+    </script>
+</html>
