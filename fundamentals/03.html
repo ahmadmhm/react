@@ -7,20 +7,40 @@
     </body>
     <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.25.0/babel.js"></script>
     <script type="text/babel">
 
         const id = 'first'
         const children = 'Hello Ahmad'
+        const childrenText = `${children} by me`
         const className = 'container'
         const element = <div className={className}>{children}</div>
         const props = {id, children, className};
         const scondElement = <div {...props} />;
 
+        function message({children}) {
+            return <div className="message">{children}</div>
+        }
+        function Componnet({children}) {
+            return <div className="message">{children}</div>
+        }
+        const reactElement = React.createElement(message, {children: 'By component'})
+        const customElement = message({children: 'Hey what`s going on here??'});
         const thirdElement = (
             <div className="container">
-                <div className="message">Hello Ahmad</div>
-                <div className="message">Goodbye for now</div>
+                <div className="message">{childrenText.toUpperCase()}</div>
+                {message({children: 'Goodbye for now'})}
+                <div>
+                    {className == 'container' ? 'That`s container' : 'wtf'}
+                </div>
+                {customElement}
+                {reactElement}
+                {React.createElement(message, {children: 'By component function'})}
+                <Componnet>component name</Componnet>
+                <Componnet>
+                    By Another 
+                    <Componnet>component name</Componnet>
+                </Componnet>
             </div>
         )
         const root = ReactDOM.createRoot(document.getElementById('root'))
